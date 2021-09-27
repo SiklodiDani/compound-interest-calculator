@@ -4,7 +4,10 @@ const Form = ({initialBalance, setInitialBalance, interestRate, setInterestRate,
     
     const calculateAmount = (e) => {
         e.preventDefault();
-        setBalance(initialBalance*(Math.pow(1+interestRate,timePeriod)-1));
+        setBalance([
+            ...balance,
+			{month: timePeriod, interest: interestRate*initialBalance, totalInterest: interestRate*initialBalance, amount: initialBalance},
+        ]);
     }
 
     return (
@@ -13,7 +16,7 @@ const Form = ({initialBalance, setInitialBalance, interestRate, setInterestRate,
             <input type="number" value={interestRate} onChange={e => setInterestRate(+e.target.value)} />
             <input type="number" value={timePeriod} onChange={e => setTimePeriod(+e.target.value)} />
             <button onClick={calculateAmount} type="submit"/>
-            <h2>{balance}</h2>
+            
         </form>
     );
 }

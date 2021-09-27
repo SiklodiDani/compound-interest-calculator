@@ -2,13 +2,14 @@ import React, {useState} from "react";
 import './App.css';
 
 import Form from "./components/Form";
+import BalanceList from "./components/BalanceList";
 
 function App() {
 
   const [initialBalance, setInitialBalance] = useState();
   const [interestRate, setInterestRate] = useState();
   const [timePeriod, setTimePeriod] = useState();  
-  const [balance, setBalance] = useState();
+  const [balance, setBalance] = useState([]);
 
   return (
 		<div className="App">
@@ -24,6 +25,9 @@ function App() {
           balance={balance}
           setBalance={setBalance}
 				/>
+        <BalanceList 
+               
+        />
 			</header>
 		</div>
 	);
