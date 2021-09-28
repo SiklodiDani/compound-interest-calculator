@@ -8,7 +8,7 @@ const BalanceList = ({balance}) => {
 			<ul>
 				{balance.map((bal) => (                    
 					<Balance                        
-						month={bal.month}
+						time={bal.time}
 						interest={bal.interest}
 						totalInterest={bal.totalInterest}
 						amount={bal.amount}                                               

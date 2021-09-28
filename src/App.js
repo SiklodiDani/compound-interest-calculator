@@ -8,7 +8,8 @@ function App() {
 
   const [initialBalance, setInitialBalance] = useState("");
   const [interestRate, setInterestRate] = useState("");
-  const [timePeriod, setTimePeriod] = useState("");  
+  const [years, setYears] = useState(""); 
+  const [months, setMonths] = useState("");   
   const [balance, setBalance] = useState([]);
 
   return (
@@ -20,8 +21,10 @@ function App() {
 					setInitialBalance={setInitialBalance}
           interestRate={interestRate}
           setInterestRate={setInterestRate}
-          timePeriod={timePeriod}
-          setTimePeriod={setTimePeriod}
+          years={years}
+          setYears={setYears}
+          months={months}
+          setMonths={setMonths}
           balance={balance}
           setBalance={setBalance}
 				/>
