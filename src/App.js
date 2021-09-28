@@ -6,9 +6,9 @@ import BalanceList from "./components/BalanceList";
 
 function App() {
 
-  const [initialBalance, setInitialBalance] = useState();
-  const [interestRate, setInterestRate] = useState();
-  const [timePeriod, setTimePeriod] = useState();  
+  const [initialBalance, setInitialBalance] = useState("");
+  const [interestRate, setInterestRate] = useState("");
+  const [timePeriod, setTimePeriod] = useState("");  
   const [balance, setBalance] = useState([]);
 
   return (
@@ -26,7 +26,7 @@ function App() {
           setBalance={setBalance}
 				/>
         <BalanceList 
-               
+          balance={balance}
         />
 			</header>
 		</div>

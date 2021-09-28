@@ -1,11 +1,19 @@
 import React from "react";
 import Balance from "./Balance";
 
-const BalanceList = () => {
+const BalanceList = ({balance}) => {    
+
 	return (
 		<div>
 			<ul>
-				<Balance />
+				{balance.map((bal) => (                    
+					<Balance                        
+						month={bal.month}
+						interest={bal.interest}
+						totalInterest={bal.totalInterest}
+						amount={bal.amount}                                               
+					/>
+				))}
 			</ul>
 		</div>
 	);

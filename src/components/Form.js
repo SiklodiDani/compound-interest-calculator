@@ -3,10 +3,10 @@ import React from "react";
 const Form = ({initialBalance, setInitialBalance, interestRate, setInterestRate, timePeriod, setTimePeriod, balance, setBalance}) => {
     
     const calculateAmount = (e) => {
-        e.preventDefault();
+        e.preventDefault();        
         setBalance([
             ...balance,
-			{month: timePeriod, interest: interestRate*initialBalance, totalInterest: interestRate*initialBalance, amount: initialBalance},
+			{month: timePeriod, interest: interestRate*initialBalance, totalInterest: interestRate*initialBalance, amount: initialBalance+(initialBalance*interestRate)},
         ]);
     }
 
