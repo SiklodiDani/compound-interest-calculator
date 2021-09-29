@@ -74,6 +74,8 @@ const Form = ({
 				</select>
                 <select onChange={CompoundIntervalHandler} name="compoundInterval">
 					<option value="yearly">Yearly</option>
+                    <option value="semiannually">Semiannually</option>
+                    <option value="quarterly">Quarterly</option>
 					<option value="monthly">Monthly </option>
 				</select>
 			</div>
