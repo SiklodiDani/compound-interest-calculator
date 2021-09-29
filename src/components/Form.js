@@ -1,13 +1,20 @@
 import React from "react";
 
-const Form = ({initialBalance, setInitialBalance, interestRate, setInterestRate, years, setYears, months, setMonths, balance, setBalance}) => {
+const Form = ({initialBalance, setInitialBalance, interestRate, setInterestRate, years, setYears, months, setMonths, balance, setBalance, interestInterval, setInterestInterval}) => {
     
     const calculateAmount = (e) => {
         e.preventDefault();        
         setBalance([
             ...balance,
-			{time: years*12+months, interest: interestRate*initialBalance/100, totalInterest: interestRate*initialBalance/100, amount: initialBalance},
-        ]);
+			{time: years*12+months, interest: interestRate, totalInterest: 0, amount: initialBalance, interestInterval: interestInterval },
+        ]);    
+        console.log(interestRate);
+        console.log(initialBalance);
+        console.log(interestRate*initialBalance/100);
+    }
+
+    const InterestIntervalHandler = (e) => {
+        setInterestInterval(e.target.value);
     }
 
     return (
@@ -17,7 +24,12 @@ const Form = ({initialBalance, setInitialBalance, interestRate, setInterestRate,
             <input type="number" placeholder="years" value={years} onChange={e => setYears(+e.target.value)} />
             <input type="number" placeholder="months" value={months} onChange={e => setMonths(+e.target.value)} />
             <button onClick={calculateAmount} type="submit"/>
-            
+            <div className="select">
+				<select onChange={InterestIntervalHandler} name="interestInterval">
+					<option value="yearly">Yearly</option>
+					<option value="monthly">Monthly </option>
+				</select>
+			</div>            
         </form>
     );
 }

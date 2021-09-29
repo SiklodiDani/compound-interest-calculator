@@ -11,6 +11,7 @@ function App() {
   const [years, setYears] = useState(""); 
   const [months, setMonths] = useState("");   
   const [balance, setBalance] = useState([]);
+  const [interestInterval, setInterestInterval] = useState("yearly");
 
   return (
 		<div className="App">
@@ -26,7 +27,9 @@ function App() {
           months={months}
           setMonths={setMonths}
           balance={balance}
-          setBalance={setBalance}
+          setBalance={setBalance}   
+          interestInterval = {interestInterval}       
+          setInterestInterval={setInterestInterval}
 				/>
         <BalanceList 
           balance={balance}
