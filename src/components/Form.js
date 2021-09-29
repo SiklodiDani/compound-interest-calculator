@@ -3,14 +3,12 @@ import React from "react";
 const Form = ({initialBalance, setInitialBalance, interestRate, setInterestRate, years, setYears, months, setMonths, balance, setBalance, interestInterval, setInterestInterval}) => {
     
     const calculateAmount = (e) => {
-        e.preventDefault();        
+        e.preventDefault();    
+        balance=[];    
         setBalance([
             ...balance,
 			{time: years*12+months, interest: interestRate, totalInterest: 0, amount: initialBalance, interestInterval: interestInterval },
-        ]);    
-        console.log(interestRate);
-        console.log(initialBalance);
-        console.log(interestRate*initialBalance/100);
+        ]);            
     }
 
     const InterestIntervalHandler = (e) => {

@@ -1,8 +1,13 @@
 import React from "react";
 
-const Balance = ({ time, interest, totalInterest, amount }) => {
+const Balance = ({ time, interest, totalInterest, amount, interestInterval }) => {
 	const finalList = [];			
-	const initialInterest= (interest / 100).toFixed(2);	
+	let initialInterest= (interest / 100).toFixed(2);	
+
+	if(interestInterval === "yearly")
+	{
+		initialInterest /= 12;
+	}
 
 	for (let i = 1; i <= time; i++) {
 		console.log(initialInterest);
