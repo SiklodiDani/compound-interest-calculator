@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react/cjs/react.development";
 
 const Balance = ({
 	time,
@@ -8,10 +9,25 @@ const Balance = ({
 	interestInterval,
 	compoundInterval,
 }) => {
+	const [projectionBreakdown, setProjectionBreakdown] = useState(1);
 	const finalList = [];
 	let initialInterest = interest / 100;
 	let initialAmount = amount;
 	let compInterval;
+
+	const MonthsBreakdown = () => {
+		setProjectionBreakdown(1);
+	}
+	const YearsBreakdown = () => {
+		setProjectionBreakdown(12);
+	}
+
+	finalList.push(
+		<li>
+			<button onClick={MonthsBreakdown} type="submit" />
+			<button onClick={YearsBreakdown} type="submit" />
+		</li>
+	);
 
 	if (interestInterval === "yearly") {
 		initialInterest /= 12;
@@ -39,11 +55,14 @@ const Balance = ({
 			initialAmount = amount;
 		}
 		totalInterest += interest;
-		finalList.push(
-			<li>
-				{i} {interest.toFixed(2)} {totalInterest.toFixed(2)} {amount.toFixed(2)}
-			</li>
-		);
+		if (i % projectionBreakdown === 0) {
+			finalList.push(
+				<li>
+					{i / projectionBreakdown} {interest.toFixed(2)}{" "}
+					{totalInterest.toFixed(2)} {amount.toFixed(2)}
+				</li>
+			);
+		}
 	}
 
 	return finalList;
