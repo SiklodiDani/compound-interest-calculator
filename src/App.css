@@ -31,28 +31,40 @@ form select {
   cursor: pointer;
 }
 
+.balances-container {
+  overflow: scroll;
+  max-width:95vw;
+}
+
+.balances-container::-webkit-scrollbar{
+  display: none;
+}
+
 .balances-table {
   border-collapse: collapse;
   margin: 25px 0;
   font-size: 0.9em;
   width: 100%;
-  border-radius: 8px 8p
+  border-radius: 8px 8px;
+  overflow: hidden;
 }
 
 .balances-table thead tr {
   background-color: #24565f;
-  text-align: center;
+  text-align: left;
 }
 
 .balances-table th,
 .balances-table td {
-  padding: 12px 15px;
+  padding: 12px 10px;
 }
 
 .balances-table tbody tr {
-  text-align: center;
+  text-align: left;
   border-bottom: 1px solid rgb(59, 58, 102);
 }
+
+
 
 .balances-table tbody tr:nth-of-type(even){
   background-color: rgb(30, 138, 71);

@@ -61,7 +61,7 @@ const Balance = ({
 	}
 
 	return (
-		<div >
+		<div className="balances-container">
 			<button onClick={MonthsBreakdown} type="submit" />
 			<button onClick={YearsBreakdown} type="submit" />
 			
