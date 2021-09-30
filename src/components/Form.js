@@ -42,43 +42,57 @@ const Form = ({
 
 	return (
 		<form>
-			<input
-				type="number"
-				placeholder="initialBalance"
-				value={initialBalance}
-				onChange={(e) => setInitialBalance(+e.target.value)}
-			/>
-			<input
-				type="number"
-				placeholder="interestRate"
-				value={interestRate}
-				onChange={(e) => setInterestRate(+e.target.value)}
-			/>
-			<input
-				type="number"
-				placeholder="years"
-				value={years}
-				onChange={(e) => setYears(+e.target.value)}
-			/>
-			<input
-				type="number"
-				placeholder="months"
-				value={months}
-				onChange={(e) => setMonths(+e.target.value)}
-			/>
-			<button onClick={calculateAmount} type="submit" />
-			<div className="select">
+			<div>
+				<input
+					type="number"
+					placeholder="initialBalance"
+					value={initialBalance}
+					onChange={(e) => setInitialBalance(+e.target.value)}
+					className="initialBalance-input"
+				/>
+			</div>
+			<div>
+				<input
+					type="number"
+					placeholder="interestRate"
+					value={interestRate}
+					onChange={(e) => setInterestRate(+e.target.value)}
+					className="interestRate-input"
+				/>
 				<select onChange={InterestIntervalHandler} name="interestInterval">
 					<option value="yearly">Yearly</option>
 					<option value="monthly">Monthly </option>
 				</select>
-                <select onChange={CompoundIntervalHandler} name="compoundInterval">
+			</div>
+			<div>
+				<input
+					type="number"
+					placeholder="years"
+					value={years}
+					onChange={(e) => setYears(+e.target.value)}
+				/>
+				<input
+					type="number"
+					placeholder="months"
+					value={months}
+					onChange={(e) => setMonths(+e.target.value)}
+				/>
+			</div>
+			<div className="select">
+				<select onChange={CompoundIntervalHandler} name="compoundInterval">
 					<option value="yearly">Yearly</option>
-                    <option value="semiannually">Semiannually</option>
-                    <option value="quarterly">Quarterly</option>
+					<option value="semiannually">Semiannually</option>
+					<option value="quarterly">Quarterly</option>
 					<option value="monthly">Monthly </option>
 				</select>
 			</div>
+			<button
+				onClick={calculateAmount}
+				type="submit"
+				className="calculate-button"
+			>
+				Calculate
+			</button>
 		</form>
 	);
 };

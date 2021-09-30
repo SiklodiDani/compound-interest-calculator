@@ -16,7 +16,7 @@ function App() {
 
   return (
 		<div className="App">
-			<header className="App-header">
+			<header>
 				<h1>Compound Interest Calculator</h1>
 				<Form
 					initialBalance={initialBalance}

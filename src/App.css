@@ -1,19 +1,7 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -24,15 +12,74 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+form input {
+  border: none;  
+  padding: 12px 20px;
+  border-radius: 8px; 
+  margin: 12px; 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form input:focus {
+  outline: none;
+  border: 3px solid #4CAF50;
 }
+
+form select {
+  border-radius: 8px;
+  padding: 10px 20px;
+  outline: none;  
+  cursor: pointer;
+}
+
+.balances-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  width: 100%;
+  border-radius: 8px 8p
+}
+
+.balances-table thead tr {
+  background-color: #24565f;
+  text-align: center;
+}
+
+.balances-table th,
+.balances-table td {
+  padding: 12px 15px;
+}
+
+.balances-table tbody tr {
+  text-align: center;
+  border-bottom: 1px solid rgb(59, 58, 102);
+}
+
+.balances-table tbody tr:nth-of-type(even){
+  background-color: rgb(30, 138, 71);
+}
+
+.balances-table tbody tr:last-of-type {
+  border-bottom: 3px solid brown;
+}
+
+.interestRate-input {
+  width: 60px;
+}
+
+.calculate-button {
+  background-color: white;  
+  color: #4CAF50;
+  border: 3px solid #4CAF50;
+  font-size: 12px;
+  padding: 10px 24px;
+  border-radius: 8px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;  
+}
+
+.calculate-button:hover{
+  background-color: #4CAF50;
+  color: white;
+}
+

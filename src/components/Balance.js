@@ -17,34 +17,27 @@ const Balance = ({
 
 	const MonthsBreakdown = () => {
 		setProjectionBreakdown(1);
-	}
+	};
 	const YearsBreakdown = () => {
 		setProjectionBreakdown(12);
-	}
-
-	finalList.push(
-		<li>
-			<button onClick={MonthsBreakdown} type="submit" />
-			<button onClick={YearsBreakdown} type="submit" />
-		</li>
-	);
+	};
 
 	if (interestInterval === "yearly") {
 		initialInterest /= 12;
 	}
 
-	switch(compoundInterval) {
+	switch (compoundInterval) {
 		case "yearly":
-			compInterval=12;
+			compInterval = 12;
 			break;
 		case "semiannually":
-			compInterval=6;
+			compInterval = 6;
 			break;
 		case "quarterly":
-			compInterval=3;
+			compInterval = 3;
 			break;
 		default:
-			compInterval=1;
+			compInterval = 1;
 			break;
 	}
 
@@ -57,15 +50,37 @@ const Balance = ({
 		totalInterest += interest;
 		if (i % projectionBreakdown === 0) {
 			finalList.push(
-				<li>
-					{i / projectionBreakdown} {interest.toFixed(2)}{" "}
-					{totalInterest.toFixed(2)} {amount.toFixed(2)}
-				</li>
+				<tr>
+					<td>{i / projectionBreakdown}</td>
+					<td> {interest.toFixed(2)}</td>
+					<td>{totalInterest.toFixed(2)}</td>
+					<td>{amount.toFixed(2)}</td>
+				</tr>
 			);
 		}
 	}
 
-	return finalList;
+	return (
+		<div >
+			<button onClick={MonthsBreakdown} type="submit" />
+			<button onClick={YearsBreakdown} type="submit" />
+			
+			<table className="balances-table" >
+				<thead>
+					<tr>
+						<th>Month</th>
+						<th>Interest</th>
+						<th>Total Interest</th>
+						<th>Total Balance</th>
+					</tr>
+				</thead>
+				<tbody>
+					{finalList}
+				</tbody>
+			</table>
+			
+		</div>
+	);
 };
 
 export default Balance;
