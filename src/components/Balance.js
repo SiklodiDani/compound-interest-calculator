@@ -1,5 +1,6 @@
-import React from "react";
-import { useState } from "react/cjs/react.development";
+import React, {useState} from "react";
+import './Balance.css';
+
 
 const Balance = ({
 	time,

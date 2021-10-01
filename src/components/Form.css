@@ -1,0 +1,65 @@
+form input {
+    justify-content: right;
+    border: none;  
+    padding: 12px 20px;
+    border-radius: 8px; 
+    margin: 12px;
+  }
+  
+  form label {
+    font-size: 17px;
+  }
+  
+  form input:focus {
+    outline: none;
+    border: 3px solid #24565f;
+  }
+  
+  form select {
+    border-radius: 8px;
+    padding: 10px 1px;
+    margin: 5px;
+    width: 75px;
+    outline: none;  
+    cursor: pointer;
+  }
+  
+  form p {
+    font-size: medium;
+    margin: 0;
+  }
+  
+  .depositAmount-input {
+    width: 35px;
+  }
+  
+  .interestYears-input {
+    width:30px;
+  }
+  
+  .interestMonths-input {
+    width: 30px;
+  }
+  
+  .interestRate-input {
+    width: 30px;
+  }
+  
+  .calculate-button {
+    background-color: white;  
+    color: #4CAF50;
+    border: 3px solid #4CAF50;
+    font-size: 14px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    margin: 10px;
+    transition-duration: 0.4s;
+    cursor: pointer;  
+  }
+
+  .calculate-button:hover{
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  
