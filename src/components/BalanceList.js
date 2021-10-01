@@ -14,6 +14,8 @@ const BalanceList = ({balance}) => {
 					amount={bal.amount}
 					interestInterval={bal.interestInterval}
 					compoundInterval={bal.compoundInterval}
+					depositAmount={bal.depositAmount}
+					depositInterval={bal.depositInterval}
 				/>
 			))}
 		</div>

@@ -19,7 +19,11 @@ form input {
   border: none;  
   padding: 12px 20px;
   border-radius: 8px; 
-  margin: 12px; 
+  margin: 12px;
+}
+
+form label {
+  font-size: 17px;
 }
 
 form input:focus {
@@ -29,9 +33,9 @@ form input:focus {
 
 form select {
   border-radius: 8px;
-  padding: 10px 20px;
-  margin: 12px;
-  width: 100px;
+  padding: 10px 1px;
+  margin: 5px;
+  width: 75px;
   outline: none;  
   cursor: pointer;
 }
@@ -41,16 +45,20 @@ form p {
   margin: 0;
 }
 
+.depositAmount-input {
+  width: 50px;
+}
+
 .interestYears-input {
-  width:20px;
+  width:30px;
 }
 
 .interestMonths-input {
-  width: 20px;
+  width: 30px;
 }
 
 .interestRate-input {
-  width: 20px;
+  width: 30px;
 }
 
 .balances-container {
@@ -109,7 +117,7 @@ form p {
   cursor: pointer;  
 }
 
-.balances-container button {
+.balances-buttons button {
   background-color: white;  
   color: #24565f;
   border: 2.5px solid #24565f;
@@ -121,7 +129,7 @@ form p {
   cursor: pointer;
 }
 
-.balances-container button:hover{
+.balances-buttons button:hover{
   background-color: #24565f;
   color: white;
 }

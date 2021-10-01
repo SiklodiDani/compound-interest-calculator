@@ -15,6 +15,10 @@ const Form = ({
 	setInterestInterval,
 	compoundInterval,
 	setCompoundInterval,
+	depositAmount,
+	setDepositAmount,
+	depositInterval,
+	setDepositInterval
 }) => {
 	const calculateAmount = (e) => {
 		e.preventDefault();
@@ -28,7 +32,9 @@ const Form = ({
 				amount: initialBalance,
 				interestInterval: interestInterval,
 				compoundInterval: compoundInterval,
-			},
+				depositAmount: depositAmount,
+				depositInterval: depositInterval
+			}
 		]);
 	};
 
@@ -40,15 +46,19 @@ const Form = ({
 		setCompoundInterval(e.target.value);
 	};
 
+	const DepositIntervalHandler = (e) => {
+		setDepositInterval(e.target.value);
+	};
+
 	return (
 		<form>
 			<div>
 				<label>
 					Initial Balance:
 					<input
-						type="text"
+						type="number"
 						value={initialBalance}
-						onChange={(e) => setInitialBalance(+e.target.value)}
+						onChange={(e) => setInitialBalance(e.target.value)}
 						className="initialBalance-input"
 					/>
 				</label>
@@ -57,12 +67,12 @@ const Form = ({
 				<label>
 					Interest Rate:
 					<input
-						type="text"
+						type="number"
 						value={interestRate}
-						onChange={(e) => setInterestRate(+e.target.value)}
+						onChange={(e) => setInterestRate(e.target.value)}
 						className="interestRate-input"
 					/>
-					<select onChange={InterestIntervalHandler} name="interestInterval">
+					<select onChange={InterestIntervalHandler}>
 						<option value="yearly">Yearly</option>
 						<option value="monthly">Monthly </option>
 					</select>
@@ -73,25 +83,25 @@ const Form = ({
 					Years:
 					<input
 						className="interestYears-input"
-						type="text"
+						type="number"
 						value={years}
-						onChange={(e) => setYears(+e.target.value)}
+						onChange={(e) => setYears(e.target.value)}
 					/>
 				</label>
 				<label>
 					Months:
 					<input
 						className="interestMonths-input"
-						type="text"
+						type="number"
 						value={months}
-						onChange={(e) => setMonths(+e.target.value)}
+						onChange={(e) => setMonths(e.target.value)}
 					/>
 				</label>
 			</div>
 			<div className="select">
 				<label>
 					Compound Interval:
-					<select onChange={CompoundIntervalHandler} name="compoundInterval">
+					<select onChange={CompoundIntervalHandler} >
 						<option value="yearly">Yearly</option>
 						<option value="semiannually">Semiannually</option>
 						<option value="quarterly">Quarterly</option>
@@ -99,6 +109,23 @@ const Form = ({
 					</select>
 				</label>
 			</div>
+			<div>
+				<label>
+					Deposit Amount:
+					<input
+					className="depositAmount-input"
+					type="number"
+					value={depositAmount}
+					onChange={(e) => setDepositAmount(e.target.value)}
+					 />
+					 <select onChange={DepositIntervalHandler} >
+						<option value="yearly">Yearly</option>
+						<option value="semiannually">Semiannually</option>
+						<option value="quarterly">Quarterly</option>
+						<option value="monthly">Monthly </option>
+					</select>
+				</label>
+				</div>
 			<button
 				onClick={calculateAmount}
 				type="submit"

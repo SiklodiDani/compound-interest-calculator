@@ -13,6 +13,8 @@ function App() {
   const [balance, setBalance] = useState([]);
   const [interestInterval, setInterestInterval] = useState("yearly");
   const [compoundInterval, setCompoundInterval] = useState("yearly");
+  const [depositAmount, setDepositAmount] = useState("");
+  const [depositInterval, setDepositInterval] = useState("yearly");
 
   return (
 		<div className="App">
@@ -33,6 +35,10 @@ function App() {
           setInterestInterval={setInterestInterval}
           compoundInterval={compoundInterval}
           setCompoundInterval={setCompoundInterval}
+          depositAmount={depositAmount}
+          setDepositAmount={setDepositAmount}
+          depositInterval={depositInterval}
+          setDepositInterval={setDepositInterval}
 				/>
         <BalanceList 
           balance={balance}
