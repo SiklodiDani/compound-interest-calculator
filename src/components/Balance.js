@@ -66,6 +66,7 @@ const Balance = ({
 	}
 
 	for (let i = 1; i <= time; i++) {
+		console.log(time);
 		interest = initialInterest * initialAmount;
 		amount = amount + interest;
 		totalInterest += interest;

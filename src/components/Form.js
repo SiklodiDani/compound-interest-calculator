@@ -27,7 +27,7 @@ const Form = ({
 		setBalance([
 			...balance,
 			{
-				time: years * 12 + months,
+				time: Number(years) * 12 + Number(months),
 				interest: interestRate,
 				totalInterest: 0,
 				amount: initialBalance,

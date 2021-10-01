@@ -30,19 +30,19 @@ form input {
   }
   
   .depositAmount-input {
-    width: 35px;
+    width: 40px;
   }
   
   .interestYears-input {
-    width:30px;
+    width:40px;
   }
   
   .interestMonths-input {
-    width: 30px;
+    width: 40px;
   }
   
   .interestRate-input {
-    width: 30px;
+    width: 40px;
   }
   
   .calculate-button {
