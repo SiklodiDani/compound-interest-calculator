@@ -5,8 +5,9 @@ const BalanceList = ({balance}) => {
 
 	return (
 		<div >
-			{balance.map((bal) => (
+			{balance.map((bal, i) => (
 				<Balance
+					key={i}
 					time={bal.time}
 					interest={bal.interest}
 					totalInterest={bal.totalInterest}

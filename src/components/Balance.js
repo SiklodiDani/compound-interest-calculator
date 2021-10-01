@@ -50,7 +50,7 @@ const Balance = ({
 		totalInterest += interest;
 		if (i % projectionBreakdown === 0) {
 			finalList.push(
-				<tr>
+				<tr key={i}>
 					<td>{i / projectionBreakdown}</td>
 					<td> {interest.toFixed(2)}</td>
 					<td>{totalInterest.toFixed(2)}</td>
@@ -62,8 +62,10 @@ const Balance = ({
 
 	return (
 		<div className="balances-container">
-			<button onClick={MonthsBreakdown} type="submit" />
-			<button onClick={YearsBreakdown} type="submit" />
+			<h3>Projection breakdown:</h3>
+			<button onClick={MonthsBreakdown} type="submit">Months </button>
+			<button onClick={YearsBreakdown} type="submit" >Years</button>
+			
 			
 			<table className="balances-table" >
 				<thead>
