@@ -10,12 +10,14 @@ const Balance = ({
 	compoundInterval,
 	depositAmount,
 	depositInterval,
+	totalDeposits
 }) => {
 	const [projectionBreakdown, setProjectionBreakdown] = useState(1);
 	const finalList = [];
 	interest = Number(interest);
 	depositAmount = Number(depositAmount);
 	amount = Number(amount);
+	totalDeposits = Number(totalDeposits);
 	let initialInterest = interest / 100;
 	let initialAmount = amount;
 	let compInterval;
@@ -70,6 +72,7 @@ const Balance = ({
 		if (i % depInterval === 0) {
 			initialAmount += depositAmount;
 			amount += depositAmount;
+			totalDeposits += depositAmount;
 		}
 
 		if (i % compInterval === 0) {
@@ -81,6 +84,7 @@ const Balance = ({
 				<tr key={i}>
 					<td>{i / projectionBreakdown}</td>
 					<td> {interest.toFixed(2)}</td>
+					<td> {totalDeposits.toFixed(2)}</td>
 					<td>{totalInterest.toFixed(2)}</td>
 					<td>{amount.toFixed(2)}</td>
 				</tr>
@@ -93,7 +97,7 @@ const Balance = ({
 			<div className="balances-buttons">
 				<h3>Projection breakdown:</h3>
 				<button onClick={MonthsBreakdown} type="submit">
-					Months{" "}
+					Months
 				</button>
 				<button onClick={YearsBreakdown} type="submit">
 					Years
@@ -103,8 +107,9 @@ const Balance = ({
 				<table className="balances-table">
 					<thead>
 						<tr>
-							<th>Month</th>
+							<th>Period</th>
 							<th>Interest</th>
+							<th>Total Deposits</th>
 							<th>Total Interest</th>
 							<th>Total Balance</th>
 						</tr>

@@ -33,6 +33,7 @@ const Form = ({
 				interestInterval: interestInterval,
 				compoundInterval: compoundInterval,
 				depositAmount: depositAmount,
+				totalDeposits: depositAmount,
 				depositInterval: depositInterval
 			}
 		]);
